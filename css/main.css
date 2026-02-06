@@ -12,3 +12,18 @@ html, body {
   overflow: hidden;
   font-family: sans-serif;
 }
+
+#transition {
+  position: fixed;
+  inset: 0;
+  background: black;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 9999;
+}
+
+/* Active fade */
+#transition.active {
+  opacity: 1;
+}

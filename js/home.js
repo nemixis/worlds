@@ -11,9 +11,3 @@ space.addEventListener('mousemove', (e) => {
     translate(${x}px, ${y}px)
   `;
 });
-
-// Navigation vers le monde
-star.addEventListener('click', () => {
-  const link = star.dataset.link;
-  window.location.href = link;
-});

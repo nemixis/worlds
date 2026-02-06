@@ -21,6 +21,10 @@
 }
 
 .star:hover {
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: translate(-50%, -50%) scale(5);
   box-shadow: 0 0 40px rgba(255,255,255,1);
+}
+
+.star:active {
+  transform: translate(-50%, -50%) scale(0.8);
 }
