@@ -1,0 +1,26 @@
+#space {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Le point lumineux */
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.star:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 0 40px rgba(255,255,255,1);
+}

@@ -1,0 +1,25 @@
+body {
+  overflow-x: hidden;
+}
+
+.scene {
+  position: relative;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene img {
+  max-width: 60%;
+  position: sticky;
+  top: 20vh;
+}
+
+.scene h1,
+.scene p {
+  position: sticky;
+  top: 10vh;
+  max-width: 400px;
+  opacity: 0.8;
+}
