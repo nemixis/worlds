@@ -1,9 +1,16 @@
+#space-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
 #space {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  z-index: 1;
 }
+
 
 /* Le point lumineux */
 .star {
@@ -12,17 +19,47 @@
   left: 50%;
   width: 8px;
   height: 8px;
-  background: white;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px rgba(255,255,255,0.8);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #dbe9ff 35%,
+    #7aa2ff 60%,
+    transparent 20%
+  );
+
+  box-shadow:
+    0 0 15px rgba(180,220,255,0.6),
+    0 0 40px rgba(120,160,255,0.5),
+    0 0 80px rgba(80,120,255,0.3);
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(120,160,255,0.10),
+    transparent 50%
+  );
+  animation: haloPulse 4s infinite ease-in-out;
+}
+
+@keyframes haloPulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.7; }
 }
 
 .star:hover {
-  transform: translate(-50%, -50%) scale(5);
-  box-shadow: 0 0 40px rgba(255,255,255,1);
+  transform: translate(-50%, -50%) scale(1.6);
+  filter: brightness(3);
 }
 
 .star:active {
